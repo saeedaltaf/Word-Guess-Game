@@ -3,3 +3,4 @@ var randomWordArray = ["Acura", "Audi", "BMW", "Bentley", "Bugatti", "Buick", "C
     "Infiniti", "Jaguar", "Jeep", "Kia", "Koenigsegg", "Lamborghini", "Land Rover", "Lexus", "Lincoln",
     "Mazda", "Mclaren", "Maserati", "Mercedes", "Mini", "Mitsubishi", "Nissan", "Pagani", "Peugeot", "Porsche",
     "Renault", "Rolls Royce", "Skoda", "Tesla", "Smart", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo"];
+var randomWord = randomWordArray[Math.floor(Math.random() * randomWordArray.length)];
