@@ -1,0 +1,27 @@
+*{
+    background-color: darkgray;
+}
+#title{
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    font-size: 130px;
+    color: #bb0a1e;
+}
+.container{
+    background-color: darkgray;
+}
+.row{
+    background-color: darkgray;
+    text-align: center;
+    font-family: 'Kalam', cursive;
+}
+#directions{
+    text-align: center;
+
+}
+#artim{
+    background-color: #bb0a1e;
+}
+#gamehere{
+    background-color: blue;
+}
