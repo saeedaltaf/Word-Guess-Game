@@ -5,11 +5,12 @@
     font-family: 'Permanent Marker', cursive;
     text-align: center;
     font-size: 130px;
-    color: #bb0a1e;
+    color: #000000;
+    background: #0bd3d3;
 }
 body{
     /* background-color: darkgray; */
-    background-color: pink;
+    background-color: #f890e7;
 
 }
 .container{
@@ -22,11 +23,15 @@ body{
 }
 #directions{
     text-align: center;
+    color: #ffffff;
 
 }
 #artim{
     background-color: #bb0a1e;
+    border: 5px dashed black;
+    margin-right: 20px;
 }
 #gamehere{
     background-color: blue;
+    border: 5px dashed 	#0bd3d3;
 }
