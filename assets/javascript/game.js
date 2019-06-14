@@ -8,6 +8,8 @@ var word = ["Acura", "Audi", "BMW", "Bentley", "Bugatti", "Buick", "Cadillac",
 //To choose word randomly from word bank array:
 var randNum = Math.floor(Math.random() * word.length);
 var randomWord = word[randNum];
+//Testing:
+console.log(randomWord);
 
 var rightWord = [];
 var wrongWord = [];
@@ -33,6 +35,15 @@ document.onkeyup = function(event){
     var userGuess = event.key;   
     ///Log the keystroke to see if it's working: 
     // console.log(event);
+    // console.log(randomWord.indexOf(userGuess));
+//If userGuess is correct, 
+    if (randomWord.indexOf(userGuess) > -1) {
+        //Add to rightWord array:
+        rightWord.push(userGuess);
+        console.log(rightWord);
+        //else push to wrongWord array:
+    } else wrongWord.push(userGuess);
+        console.log(wrongWord);
 
 
     
