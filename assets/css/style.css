@@ -1,5 +1,5 @@
 *{
-    background-color: darkgray;
+    /* background-color: darkgray; */
 }
 #title{
     font-family: 'Permanent Marker', cursive;
@@ -7,11 +7,16 @@
     font-size: 130px;
     color: #bb0a1e;
 }
+body{
+    /* background-color: darkgray; */
+    background-color: pink;
+
+}
 .container{
-    background-color: darkgray;
+    /* background-color: darkgray; */
 }
 .row{
-    background-color: darkgray;
+    /* background-color: darkgray; */
     text-align: center;
     font-family: 'Kalam', cursive;
 }
