@@ -1,21 +1,33 @@
 //Word bank array:
-var words = ["Acura", "Audi", "BMW", "Bentley", "Bugatti", "Buick", "Cadillac",
+var word = ["Acura", "Audi", "BMW", "Bentley", "Bugatti", "Buick", "Cadillac",
     "Chevrolet", "Chrysler", "Citroen", "Dodge", "Ferrari", "Fiat", "Ford", "GMC", "Honda", "Hyundai",
     "Infiniti", "Jaguar", "Jeep", "Kia", "Koenigsegg", "Lamborghini", "Land Rover", "Lexus", "Lincoln",
     "Mazda", "Mclaren", "Maserati", "Mercedes", "Mini", "Mitsubishi", "Nissan", "Pagani", "Peugeot", "Porsche",
     "Renault", "Rolls Royce", "Skoda", "Tesla", "Smart", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo"];
 
-    //To pick a random word:
-var currentWord = words[Math.floor(Math.random() * words.length)];
+//To pick a random word:
+var currentWord = word[Math.floor(Math.random() * word.length)];
 
 //To set up the answer array by showing "_" for each index:
 var answerArray = [];
-for (i = 0; i < words.length; i++){
+for (i = 0; i < word.length; i++) {
     answerArray[i] = "_";
-}
+};
 
 //Variable to show how many letters are remaining to be guessed:
-var remainingLetters = words.length;
+var remainingLetters = word.length;
+
+//To keep score and guesses:
+var guessedLetters = "";
+var wins = 0;
+var guessesRemaining = 10;
+
+//Variables to write to html:
+var guessesRemainingText = document.getElementById("guessesremaining-text");
+var lettersGuessedText = document.getElementById("lettersguessed-text");
+var winsText = document.getElementById("wins-text");
+var gamePlayText = document.getElementById("gameplay-text");
+var directionsText = document.getElementById("directions");
 
 ////////////////////////////////////
 // *****CODE FOR THE MAIN GAME*****
@@ -24,7 +36,22 @@ var remainingLetters = words.length;
 document.onkeyup = function (event) {
     var userGuess = event.key;
     // console.log("testing onkeyup function");
+    //Update guess into the game:
+    while (remainingLetters > 0) {
+        gamePlayText.textContent = (answerArray.join(" "));
+        for (var j = 0; j < word.length; j++){
+            if (word[j] === guess);
+            guessesRemaining--;
+            }  
+
+        directionsText.textContent = "";
+        
+        }
+    }
 
 
-    
-}
+
+
+
+
+
