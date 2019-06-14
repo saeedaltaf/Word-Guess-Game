@@ -13,6 +13,36 @@ var rightWord = [];
 var wrongWord = [];
 var underScore = [];
 
+var gamePlayText = document.getElementById("gameplay-text");
+
+//Create underscores based on length of random word which was chosen:
+var generateUnderscore = () => {
+    for (var i = 0; i < randomWord.length; i++){
+        underScore.push("_");
+    }
+    return underScore;
+}
+
+//test to see if the underscore works:
+console.log(generateUnderscore());
+//push underscores to game area
+gamePlayText.textContent = underScore;
+
+//Get user guess from key:
+document.onkeyup = function(event){
+    var userGuess = event.key;   
+    ///Log the keystroke to see if it's working: 
+    // console.log(event);
+
+
+    
+
+}
+
+
+
+
+
 
 
 

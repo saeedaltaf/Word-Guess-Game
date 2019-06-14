@@ -7,11 +7,11 @@
     font-size: 130px;
     color: #000000;
     background: #0bd3d3;
+    
 }
 body{
     /* background-color: darkgray; */
     background-color: #f890e7;
-
 }
 .container{
     /* background-color: darkgray; */
@@ -32,6 +32,6 @@ body{
     margin-right: 20px;
 }
 #gamehere{
-    background-color: blue;
+    background-color: white;
     border: 5px dashed 	#0bd3d3;
 }
