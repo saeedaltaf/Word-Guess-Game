@@ -17,7 +17,7 @@ var wrongLetter = [];
 var underScore = [];
 
 var wins = 0;
-var guessesRemaining = 10;
+var guessesRemaining = 11;
 
 var gamePlayText = document.getElementById("gameplay-text");
 var winsText = document.getElementById("wins-text");
@@ -36,27 +36,28 @@ var generateUnderscore = () => {
 console.log(generateUnderscore());
 //push underscores to game area
 gamePlayText.textContent = underScore;
-guessesRemainingText.textContent = "Guesses Remaining: " + guessesRemaining;
+
 
 //Get user guess from key:
 document.onkeyup = function(event){
-    var userGuess = event.key;  
-    
-    //For the length of the randomWord, we read each letter:
+    var userGuess = event.key;
+    guessesRemaining--;
+    if (guessesRemaining === 0){
+        alert("GAME OVER!");
+    }
+   //For the length of the randomWord, we read each letter:
     for(var x=0;x<randomWord.length;x++) {  
-        guessesRemaining--;   
         //If the userGuess is in the array randomWord:
         if(userGuess === randomWord[x]) { 
         //Replace underscore with the correct letter guessed in the correct index within the word:
             underScore[x] = userGuess;
-            gamePlayText.textContent = underScore.join(" ");
-            
+            gamePlayText.textContent = underScore.join(" ");  
         }
     }
-
+    
     directionsText.textContent = "";
     winsText.textContent = "Wins: " + wins;
-
+    guessesRemainingText.textContent = "Guesses Remaining: " + guessesRemaining;
 
 
 }
