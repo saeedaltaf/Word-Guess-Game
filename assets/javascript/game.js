@@ -1,9 +1,9 @@
-//Word bank array:
+//Word bank array (in lowercase):
 var word = ["Acura", "Audi", "BMW", "Bentley", "Bugatti", "Buick", "Cadillac",
     "Chevrolet", "Chrysler", "Citroen", "Dodge", "Ferrari", "Fiat", "Ford", "GMC", "Honda", "Hyundai",
     "Infiniti", "Jaguar", "Jeep", "Kia", "Koenigsegg", "Lamborghini", "Land Rover", "Lexus", "Lincoln",
     "Mazda", "Mclaren", "Maserati", "Mercedes", "Mini", "Mitsubishi", "Nissan", "Pagani", "Peugeot", "Porsche",
-    "Renault", "Rolls Royce", "Skoda", "Tesla", "Smart", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo"];
+    "Renault", "Rolls Royce", "Skoda", "Tesla", "Smart", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo"].map(v => v.toLowerCase());
 
 //To choose word randomly from word bank array:
 var randNum = Math.floor(Math.random() * word.length);
@@ -17,7 +17,7 @@ var wrongLetter = [];
 var underScore = [];
 
 var wins = 0;
-var guessesRemaining = 11;
+var guessesRemaining = 13;
 
 var gamePlayText = document.getElementById("gameplay-text");
 var winsText = document.getElementById("wins-text");
@@ -37,14 +37,17 @@ console.log(generateUnderscore());
 //push underscores to game area
 gamePlayText.textContent = underScore;
 
-
-//Get user guess from key:
+//Get user guess from key and if it's a capital letter convert to lowercase:
 document.onkeyup = function(event){
-    var userGuess = event.key;
+    var userGuess = (event.key).toLowerCase();
+
+//Everytime a user presses a key, reduce guesses remaining by 1:
     guessesRemaining--;
+//If guesses remaining are zero, end game:    
     if (guessesRemaining === 0){
         alert("GAME OVER!");
     }
+
    //For the length of the randomWord, we read each letter:
     for(var x=0;x<randomWord.length;x++) {  
         //If the userGuess is in the array randomWord:
@@ -61,91 +64,4 @@ document.onkeyup = function(event){
 
 
 }
-    // var result = -2;
-    // while ((result = randomWord.indexOf(userGuess, result +1)) > -1){
-    //     console.log(result);
-    //     underScore[randomWord.indexOf(result)] = userGuess;
-    //     gamePlayText.textContent = underScore.join(" ");
-    // }
-
-    ///Log the keystroke to see if it's working: 
-    // console.log(event);
-    // console.log(randomWord.indexOf(userGuess));
-// If userGuess is correct, 
-    // if (randomWord.indexOf(userGuess) > -1) {
-    //     //Add to rightWord array:
-    //     rightLetter.push(userGuess);
-    //     // console.log(rightWord);
-    //     //Replace underscore with the correct letter guessed:
-    //     underScore[randomWord.indexOf(userGuess)] = userGuess;
-    //     gamePlayText.textContent = underScore.join(" ");
-    //     //Check to see if the userGuesses match the randomWord:
-    //     if (underScore.join(" ") === randomWord) {
-    //         guessesRemaining--;
-    //     } else {
-    //         guessesRemaining--;
-    //     }
-
-    //     //else push to wrongWord array:
-    // } else wrongLetter.push(userGuess);
-    //     // console.log(wrongWord);
-
- 
-
-
-
-
-
-
-
-
-
-// //To pick a random word:
-// var currentWord = word[Math.floor(Math.random() * word.length)];
-
-// //To have an array showing letters which were guessed:
-// var lettersGuessed = [];
-
-// //Variable to show how many letters are remaining to be guessed:
-// var remainingLetters = word.length;
-
-// //To keep score and guesses:
-// var guessedLetters = "";
-// var wins = 0;
-// var guessesRemaining = 10;
-
-// //Variables to write to html:
-// var guessesRemainingText = document.getElementById("guessesremaining-text");
-// var lettersGuessedText = document.getElementById("lettersguessed-text");
-// var winsText = document.getElementById("wins-text");
-// var gamePlayText = document.getElementById("gameplay-text");
-// var directionsText = document.getElementById("directions");
-
-// //To set up the answer array by showing "_" for each index:
-// var answerArray = [];
-// for (i = 0; i < word.length; i++) {
-//     answerArray[i] = "_";
-// };
-
-// ////////////////////////////////////
-// // *****CODE FOR THE MAIN GAME*****
-// ////////////////////////////////////
-
-// document.onkeyup = function (event) {
-//     var userGuess = event.key;
-//     // console.log("testing onkeyup function");
-//     //Update guess into the game:
-//     while (remainingLetters > 0) {
-//         gamePlayText.textContent = (answerArray.join(" "));
-//         for (var j = 0; j < word.length; j++){
-//             if (word[j] === userGuess);
-//             guessesRemaining--;
-//             } 
-
-//         directionsText.textContent = "";
-//         guessesRemainingText.textContent = "Guesses Remaining: " + guessesRemaining;
-    //     winsText.textContent = "Wins: " + wins;
-
-
-    //     }
-    // }
+    
