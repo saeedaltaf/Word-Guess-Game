@@ -8,14 +8,21 @@ var word = ["Acura", "Audi", "BMW", "Bentley", "Bugatti", "Buick", "Cadillac",
 //To choose word randomly from word bank array:
 var randNum = Math.floor(Math.random() * word.length);
 var randomWord = word[randNum];
+
 //Testing:
 console.log(randomWord);
 
-var rightWord = [];
-var wrongWord = [];
+var rightLetter = [];
+var wrongLetter = [];
 var underScore = [];
 
+var wins = 0;
+var guessesRemaining = 10;
+
 var gamePlayText = document.getElementById("gameplay-text");
+var winsText = document.getElementById("wins-text");
+var directionsText = document.getElementById("directions");
+var guessesRemainingText = document.getElementById("guessesremaining-text");
 
 //Create underscores based on length of random word which was chosen:
 var generateUnderscore = () => {
@@ -29,26 +36,60 @@ var generateUnderscore = () => {
 console.log(generateUnderscore());
 //push underscores to game area
 gamePlayText.textContent = underScore;
+guessesRemainingText.textContent = "Guesses Remaining: " + guessesRemaining;
 
 //Get user guess from key:
 document.onkeyup = function(event){
-    var userGuess = event.key;   
+    var userGuess = event.key;  
+    
+    //For the length of the randomWord, we read each letter:
+    for(var x=0;x<randomWord.length;x++) {  
+        guessesRemaining--;   
+        //If the userGuess is in the array randomWord:
+        if(userGuess === randomWord[x]) { 
+        //Replace underscore with the correct letter guessed in the correct index within the word:
+            underScore[x] = userGuess;
+            gamePlayText.textContent = underScore.join(" ");
+            
+        }
+    }
+
+    directionsText.textContent = "";
+    winsText.textContent = "Wins: " + wins;
+
+
+
+}
+    // var result = -2;
+    // while ((result = randomWord.indexOf(userGuess, result +1)) > -1){
+    //     console.log(result);
+    //     underScore[randomWord.indexOf(result)] = userGuess;
+    //     gamePlayText.textContent = underScore.join(" ");
+    // }
+
     ///Log the keystroke to see if it's working: 
     // console.log(event);
     // console.log(randomWord.indexOf(userGuess));
-//If userGuess is correct, 
-    if (randomWord.indexOf(userGuess) > -1) {
-        //Add to rightWord array:
-        rightWord.push(userGuess);
-        console.log(rightWord);
-        //else push to wrongWord array:
-    } else wrongWord.push(userGuess);
-        console.log(wrongWord);
+// If userGuess is correct, 
+    // if (randomWord.indexOf(userGuess) > -1) {
+    //     //Add to rightWord array:
+    //     rightLetter.push(userGuess);
+    //     // console.log(rightWord);
+    //     //Replace underscore with the correct letter guessed:
+    //     underScore[randomWord.indexOf(userGuess)] = userGuess;
+    //     gamePlayText.textContent = underScore.join(" ");
+    //     //Check to see if the userGuesses match the randomWord:
+    //     if (underScore.join(" ") === randomWord) {
+    //         guessesRemaining--;
+    //     } else {
+    //         guessesRemaining--;
+    //     }
 
+    //     //else push to wrongWord array:
+    // } else wrongLetter.push(userGuess);
+    //     // console.log(wrongWord);
 
-    
-
-}
+ 
 
 
 
@@ -102,15 +143,8 @@ document.onkeyup = function(event){
 
 //         directionsText.textContent = "";
 //         guessesRemainingText.textContent = "Guesses Remaining: " + guessesRemaining;
-//         winsText.textContent = "Wins: " + wins;
+    //     winsText.textContent = "Wins: " + wins;
 
 
-//         }
-//     }
-
-
-
-
-
-
-
+    //     }
+    // }
