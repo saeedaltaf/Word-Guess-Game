@@ -67,6 +67,18 @@ document.onkeyup = function (event) {
 
     }
 
+    //IMAGES:
+    function winImage(src, width, height, alt) {
+        var img = document.createElement("img");
+        img.src = "../images/youwon.gif";
+        img.width = 200;
+        img.height = 200;
+        img.alt = "you won";
+    
+        // This next line will just add it to the <body> tag
+        ("#artim").appendChild("img");
+    }
+
     // Resets the game to a new word:
     function reset() {
         guessesRemaining = 13;
@@ -99,6 +111,7 @@ document.onkeyup = function (event) {
         //If the word is guessed (underscore)(join removes the commas), and matches the generated randomword, win!
         if (underScore.join('') === randomWord) {
             wins++;
+            winImage();
             alert("Congrats, you won!");
             reset();
             //If guesses remaining equal 0, game over alert:
