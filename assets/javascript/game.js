@@ -35,8 +35,7 @@ function generateUnderscore() {
 
 //test to see if the underscore works:
 // console.log(generateUnderscore());
-//push underscores to game area
-gamePlayText.textContent = underScore;
+
 
 document.onkeyup = function (event) {
     userGuess = (event.key).toLowerCase();
@@ -51,7 +50,8 @@ document.onkeyup = function (event) {
                 underScore[x] = userGuess;
                 gamePlayText.textContent = underScore.join("");
             }
-
+            //push underscores to game area
+            gamePlayText.textContent = underScore;
         }
     }
 
