@@ -2,7 +2,7 @@
     /* background-color: darkgray; */
 }
 #title{
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Press Start 2P', cursive;
     text-align: center;
     font-size: 130px;
     color: #000000;
@@ -11,7 +11,7 @@
 }
 body{
     /* background-color: darkgray; */
-    background-color: #f890e7;
+    background-color: #fc8eac;
 }
 .container{
     /* background-color: darkgray; */
@@ -19,7 +19,7 @@ body{
 .row{
     /* background-color: darkgray; */
     text-align: center;
-    font-family: 'Kalam', cursive;
+    font-family: 'Press Start 2P', cursive;
 }
 #directions{
     text-align: center;
