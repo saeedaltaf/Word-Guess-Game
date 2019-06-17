@@ -24,10 +24,15 @@ var winsText = document.getElementById("wins-text");
 var directionsText = document.getElementById("directions");
 var guessesRemainingText = document.getElementById("guessesremaining-text");
 var lettersGuessedText = document.getElementById("lettersguessed-text");
-var winSound = document.getElementById("youwon");
 
-// sound which buffers automatically
+//Creating audio files for win and lose, will call these in the if statement when player wins or loses:
+playWinAudio = function () {
+    document.getElementById("winaud").play();
+}
 
+playLoseAudio = function () {
+    document.getElementById("loseaud").play();
+}
 
 //Create underscores based on length of random word which was chosen:
 function generateUnderscore() {
@@ -93,6 +98,7 @@ document.onkeyup = function (event) {
         wrongIndex = 0;
         generateUnderscore();
 
+
     }
 
     //These functions will be called once the game resets (generating underscores for next word)
@@ -114,13 +120,15 @@ document.onkeyup = function (event) {
 
         //If the word is guessed (underscore)(join removes the commas), and matches the generated randomword, win!
         if (underScore.join('') === randomWord) {
+            playWinAudio();
             wins++;
-            alert("Congrats, you won!");
+            alert("You win!");
             reset();
             //If guesses remaining equal 0, game over alert:
         }
         if (guessesRemaining === 0) {
             alert("Game Over!");
+            playLoseAudio();
             reset();
 
         }
